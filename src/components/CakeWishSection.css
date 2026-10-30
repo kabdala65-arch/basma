@@ -1,0 +1,166 @@
+.cake-section {
+  padding: 100px 24px 60px;
+  max-width: 720px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.cake-wrapper {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.candles-row {
+  display: flex;
+  gap: 18px;
+  margin-bottom: -6px;
+  z-index: 2;
+}
+
+.candle {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 10px;
+}
+
+.candle:disabled {
+  cursor: default;
+}
+
+.candle-stick {
+  display: block;
+  width: 8px;
+  height: 44px;
+  border-radius: 3px;
+  background: linear-gradient(180deg, #fde68a, #fbbf24);
+  box-shadow: inset -2px 0 3px rgba(0, 0, 0, 0.2);
+}
+
+.flame {
+  display: block;
+  width: 12px;
+  height: 20px;
+  border-radius: 50% 50% 50% 50% / 65% 65% 35% 35%;
+  background: radial-gradient(circle at 50% 70%, #fff7cc 0%, #fbbf24 45%, #f97316 80%, transparent 100%);
+  box-shadow: 0 0 12px 4px rgba(251, 191, 36, 0.7), 0 0 24px 8px rgba(249, 115, 22, 0.35);
+  margin-bottom: 2px;
+  animation: flicker 1.4s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+@keyframes flicker {
+  0%, 100% { transform: scaleY(1) rotate(-2deg); }
+  50% { transform: scaleY(1.12) rotate(2deg); }
+}
+
+.candle.out .candle-stick {
+  filter: grayscale(0.4) brightness(0.85);
+}
+
+.cake-body {
+  width: 260px;
+  max-width: 80vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  filter: drop-shadow(0 20px 30px rgba(236, 72, 153, 0.25));
+}
+
+.cake-layer {
+  width: 100%;
+  border-radius: 14px;
+}
+
+.cake-top {
+  height: 34px;
+  background: linear-gradient(180deg, #fce7f3, #f9a8d4);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.cake-middle {
+  width: 92%;
+  height: 46px;
+  margin-top: -6px;
+  background: linear-gradient(180deg, #f472b6, #ec4899);
+  border: 2px solid rgba(255, 255, 255, 0.35);
+}
+
+.cake-bottom {
+  width: 104%;
+  height: 52px;
+  margin-top: -6px;
+  background: linear-gradient(180deg, #c084fc, #a855f7);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.cake-hint {
+  margin-top: 22px;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  color: rgba(253, 226, 237, 0.65);
+  min-height: 20px;
+}
+
+.wish-reveal {
+  margin-top: 50px;
+  max-width: 520px;
+  background: linear-gradient(135deg, rgba(236, 72, 153, 0.15), rgba(168, 85, 247, 0.15));
+  border: 1px solid rgba(255, 192, 203, 0.35);
+  border-radius: 24px;
+  padding: 40px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.wish-icon {
+  font-size: 34px;
+}
+
+.wish-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(18px, 2.4vw, 22px);
+  line-height: 1.9;
+  color: #fce7f3;
+  font-style: italic;
+}
+
+.cake-reset-btn {
+  margin-top: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 192, 203, 0.4);
+  color: #fde2ed;
+  padding: 10px 22px;
+  border-radius: 999px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.cake-reset-btn:hover {
+  background: rgba(255, 255, 255, 0.16);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 480px) {
+  .candles-row {
+    gap: 12px;
+  }
+  .cake-body {
+    width: 220px;
+  }
+}
