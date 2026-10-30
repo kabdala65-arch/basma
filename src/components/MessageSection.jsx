@@ -19,7 +19,7 @@ export default function MessageSection() {
 
         <h2 className="message-title">
           <span className="message-lead">كل سنة وانتي طيبة يا أغلى أخت في حياتي...</span>
-          <span className="signature">أخوكي عبدالله ❤️</span>
+          <span className="signature">أخوكي محمد ❤️</span>
         </h2>
 
         <motion.p
